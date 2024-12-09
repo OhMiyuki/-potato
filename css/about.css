@@ -1,0 +1,592 @@
+@import url(../css/style.css);
+
+/******************* header *****************/
+header .header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-inline: 50px;
+    height: 100px;
+}
+
+header .header_inner .header_logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header .header_inner .header_menu ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+header .header_inner .header_menu ul a:hover {
+    color: var(--accentcolor);
+}
+
+header .header_inner .header_menu ul a:nth-child(3) {
+    color: var(--accentcolor);
+}
+
+.header_pic {
+    height: 500px;
+    background-image: url(../images/about_header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* パンくずリスト */
+.pannkuzulist {
+    display: flex;
+    align-items: center;
+    padding-block-start: var(--paddingS);
+    font-size: 14px;
+    color: var(--fontcolor);
+}
+
+.pannkuzulist li:nth-child(1)::after {
+    content: ">";
+    padding: 0 10px;
+    /* 余白、仮で設定してます */
+}
+.pannkuzulist li img {
+    height: 0.75rem;
+    vertical-align: middle;
+    padding-left: 0.5rem;
+    transform: translateY(-1.5px);
+}
+/* パンくずリスト終わり */
+
+/* モバイルのときのファーストビュー調整 */
+
+@media (max-width: 600px) {
+    .header_pic {
+        height: 100vh;
+    }
+}
+
+/* --------------------下層共通コピペ終わり-------------------- */
+
+/* --------------------main開始-------------------- */
+
+/* 見出し */
+.title {
+    text-align: center;
+    padding-block-start: var(--paddingM);
+    display: flex;
+    flex-direction: column;
+    /* 余白、仮で設定してます */
+}
+
+@media (max-width: 950px) {
+    header .header_inner {
+        padding-inline: 1rem;
+        gap: var(--gapLL);
+    }
+
+    header .header_inner .header_menu ul {
+        flex-wrap: wrap;
+    }
+
+    .newsarea {
+        padding-inline-start: var(--paddingS);
+    }
+
+    header .header_inner .header_menu ul {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gapM);
+    }
+}
+/* 共通コピペ終わり */
+
+/******************* main *****************/
+
+#about #text {
+    margin-bottom: var(--marginLL);
+}
+
+/* ----- 協議会構造 年表　----- */
+
+:root {
+    --subColor: #10c1cd;
+    --markerColor: #3da89a;
+    --borderColor: #d9d9d9;
+}
+
+#about #kyougikai {
+    margin-bottom: var(--marginLL);
+}
+
+#about #kyougikai #chronologySec01 dl {
+    max-width: 800px;
+    /* padding: 2rem; */
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#about #kyougikai #chronologySec01 .chronologyBox {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    /* 丸とボーダー線が入るための左側パディング */
+    padding-inline-start: 3rem;
+    /* 要素同士の間をあけながらボーダー線を伸ばすために、下側パディングで余白を作っています */
+    padding-block-end: 3rem;
+
+    /* レスポンシブで年表のdtとddを縦並びにする */
+    @media (width <= 768px) {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+#about #kyougikai #chronologySec01 .chronologyBox:last-child {
+    /* 年表の最後は線を延ばさないので、下側パディングを消す */
+    padding-block-end: 0;
+}
+
+#about #kyougikai #chronologySec01 .chronologyBox dt {
+    /* この要素の擬似要素をpositionで配置するのでrerativeをかけて基準にする */
+    position: relative;
+    flex-shrink: 0;
+    color: #3da89a;
+    font-size: var(--fontsizeLL);
+}
+
+#about #kyougikai #chronologySec01 .chronologyBox dd .text {
+    line-height: 2rem;
+    font-size: var(--fontsizeM);
+}
+
+/**** 年表の丸印(before)と縦ボーダー線(after)のCSS ****/
+/* 擬似要素で作っています */
+
+/* 丸印 */
+#about #kyougikai #chronologySec01 .chronologyBox::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--markerColor);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* ボーダー線 */
+#about #kyougikai #chronologySec01 .chronologyBox::after {
+    content: "";
+    position: absolute;
+    /* 2pxのボーダー線を16pxの丸印の真ん中を通るようにしたいので、 */
+    /* 16pxの半分=8pxから1px分引いた7pxでポジション指定*/
+    /* (7px隙間をあけて、8-9ピクセルの場所に線が来るのでちょうど中心になる）*/
+    left: 11px;
+    top: 7px;
+    /* 線が下の要素の丸印まで伸ばしたいので、マイナス方向に指定をする */
+    bottom: -7px;
+    /* ボーダー線の太さをwidthで指定*/
+    width: 1px;
+    /* ボーダー線の長さをheightで指定。要素の高さいっぱいまで伸びて欲しいのでautoに指定 */
+    height: auto;
+    /* ボーダー線の色を背景色で指定 */
+    background-color: var(--markerColor);
+    /* 丸印よりもz-indexを低くする */
+    /* z-index: -1; */
+}
+
+#about #kyougikai #chronologySec01 .chronologyBox:nth-child(2)::after {
+    display: none;
+}
+
+/* -----　協議会構造　図解 -----　*/
+
+#about #kyougikai .about_network {
+    background-image: url(../images/about_network.png);
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    background-size: contain;
+    width: 100%;
+    aspect-ratio: 13 / 9;
+    margin-top: 8em;
+}
+
+#about #kyougikai .about_workshop {
+    background-image: url(../images/about_workshop.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: 80%;
+    aspect-ratio: 1 / 2;
+    margin-top: 4em;
+    margin-inline: auto;
+}
+
+/* 協議会構造　メディアクリエ */
+
+@media (max-width: 500px) {
+    #about #kyougikai #chronologySec01 {
+        padding: 0;
+    }
+}
+
+/* ----- ワークショップ ------- */
+
+#about #workshop {
+    background-color: var(--backgroundcolor);
+    padding-block: 3rem;
+}
+
+#about #workshop .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#about #workshop .wrapper .workshop_title > h3 {
+    padding-block: 0px;
+}
+
+#about #workshop .heading_sub {
+    text-align: center;
+}
+
+#about .workshop_subtitle {
+    font-size: var(--fontsizeL);
+    color: var(--maincolor);
+    text-align: center;
+}
+
+#about .pictogram_image {
+    width: 80px;
+    aspect-ratio: 1/1;
+    opacity: 0.5;
+}
+
+#about .policy {
+    font-size: var(--fontsizeL);
+}
+
+.policy_table {
+    background-color: var(--basecolor);
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px #b3b3b3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2rem;
+}
+
+.policy_table_title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.policy_table_item {
+    padding-inline: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bg_number {
+    font-size: var(--fontsizeXL);
+    color: var(--maincolor);
+}
+
+.item_title {
+    color: var(--maincolor);
+    font-size: var(--fontsizeLL);
+}
+
+.item_text {
+    font-size: 15px;
+    max-width: 208px;
+    height: 150px;
+    padding-block-start: 1rem;
+}
+
+.policy_border {
+    border-left: 1px solid var(--maincolor); /*線の設定*/
+    padding: 136px 0px; /*余白の設定*/
+}
+
+/* 下のリスト */
+
+.list_contant {
+    display: flex;
+    align-items: center;
+    gap: 8rem;
+    font-size: var(--fontsizeL);
+    border-bottom: 1px solid var(--maincolor); /*線の設定*/
+    padding-block: 2rem;
+    padding-inline: 2rem;
+}
+
+.list_icon {
+    padding-inline-start: 2rem;
+}
+
+.list_title {
+    display: flex;
+    gap: 1rem;
+    color: var(--maincolor);
+    font-size: var(--fontsizeL);
+}
+
+/* ボタンの上の文字とバックスラッシュ */
+
+#about .news_button {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-block-start: 2rem;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* テキストと線の間隔 */
+}
+
+.backslash {
+    position: relative;
+    width: 30px; /* バックスラッシュの長さ */
+    height: 10px; /* 高さ（調整用） */
+}
+
+.backslash::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px; /* 線の太さ */
+    background-color: var(--fontcolor); /* 線の色 */
+    transform: rotate(45deg); /* バックスラッシュの角度 */
+    top: 50%; /* 花道揃え */
+    left: 0;
+    transform-origin: center;
+}
+
+.forwardslash {
+    position: relative;
+    width: 30px; /* フォワードスラッシュの長さ */
+    height: 10px; /* 高さ（調整用） */
+}
+
+.forwardslash::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px; /* 線の太さ */
+    background-color: var(--fontcolor); /* 線の色 */
+    transform: rotate(-45deg); /* フォワードスラッシュの角度 */
+    top: 50%; /* 花道揃え */
+    left: 0;
+    transform-origin: center;
+}
+
+/* お知らせボタン */
+
+#about #workshop .button_pink {
+    margin-block-start: 0;
+}
+
+/* ワークショップ　メディアクエリ */
+
+/* max-width750px */
+
+@media (max-width: 750px) {
+    .policy_table {
+        flex-direction: column;
+    }
+
+    .item_text {
+        max-width: 600px;
+        padding-block-start: 1rem;
+        height: 105px;
+    }
+
+    .policy_border {
+        border-bottom: 1px solid var(--maincolor);
+        padding: 0px 45%;
+        margin-block-end: 2rem;
+    }
+
+    .policy_table_item {
+        max-width: 572px;
+    }
+
+    .list_contant {
+        gap: 4rem;
+    }
+}
+
+/* max-width600px */
+
+@media (max-width: 600px) {
+    .workshop_list {
+        display: flex;
+        justify-content: center;
+    }
+
+    .list_title {
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 85px;
+    }
+
+    .list_icon {
+        padding: 0px;
+        text-align: center;
+    }
+
+    .list_icon img {
+        width: 34px;
+        aspect-ratio: 1/1;
+    }
+
+    .list_contant {
+        flex-direction: column;
+        gap: 1rem;
+        width: 125px;
+        border-bottom: 0px;
+        padding-block: 1rem;
+        padding-inline: 0rem;
+    }
+
+    .list_text {
+        height: 140px;
+        text-align: center;
+    }
+
+    .list_text .font_small {
+        font-size: var(--fontsizeS);
+    }
+
+    #about .news_button {
+        padding-block-start: 0rem;
+    }
+}
+
+/* ----- 会長あいさつ ------- */
+
+#about #aisatu .kaityou {
+    display: flex;
+    margin-bottom: var(--marginLL);
+    justify-content: space-evenly;
+}
+
+#about #aisatu .kaityou .kaityou_photo {
+    height: 200px;
+    width: 250px;
+    background-image: url(../images/illust_president.svg);
+    background-repeat: no-repeat;
+    background-position: center -20%;
+    background-color: lightgrey;
+}
+
+#about #aisatu .kaityou .aisatu_left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gapM);
+    flex-basis: 40%;
+    align-items: center;
+}
+
+#about #aisatu .kaityou .aisatu_left .katagaki {
+    font-size: var(--fontsizeS);
+}
+
+#about #aisatu .kaityou .aisatu_left .name {
+    font-size: var(--fontsizeL);
+    font-weight: bold;
+}
+
+#about #aisatu .kaityou .aisatu_right {
+    flex-basis: 60%;
+}
+
+/* 会長あいさつ　メディアクエリ */
+
+@media (max-width: 800px) {
+    #about #aisatu .kaityou {
+        flex-direction: column;
+        gap: var(--gapM);
+    }
+}
+
+/* ----- 役員名簿 ----- */
+#about #meibo .meibo2024 .title2024 {
+    height: 10px;
+    width: 10px;
+    align-items: center;
+}
+
+#about #meibo .meibo2024 {
+    display: flex;
+    color: var(--maincolor);
+    gap: 0.5rem;
+}
+
+#about #meibo .meibo2024 img {
+    vertical-align: middle;
+}
+
+#about #meibo .meibo2024_itiran {
+    background-image: url(../images/about_memberlist.jpg);
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+#about #meibo .kako_meibo {
+    background-color: var(--maincolor);
+    color: white;
+    border-radius: 5px;
+    width: 170px;
+    text-align: center;
+    padding-block: 0.5rem;
+    margin-bottom: var(--marginM);
+}
+
+#about #meibo .itiran_pdf {
+    display: flex;
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+}
+
+#about #meibo .itiran_pdf p {
+    color: var(--maincolor);
+    border-bottom: 1px solid var(--maincolor);
+}
+
+/* 役員名簿　メディアクエリ */
+
+/* 背景画像 */
+
+#about .logo_circle {
+    background-image: url(../images/logo_circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 5700px;
+    left: -200px;
+    z-index: -1;
+}
+
+/******************* footer *****************/

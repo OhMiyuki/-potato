@@ -1,0 +1,276 @@
+@import url(../css/style.css);
+
+/* -------------------- 下層共通コピペここから-------------------- */
+
+/* PC版 */
+header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding-inline: 50px;
+  height: 100px;
+}
+
+header .header_inner .header_logo {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+header .header_inner .header_menu ul {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gapL);
+}
+
+header .header_inner .header_menu ul a:hover {
+  color: var(--accentcolor);
+}
+
+header .header_inner .header_menu ul a:nth-child(2) {
+  color: var(--accentcolor);
+}
+
+
+.header_pic {
+  height: 500px;
+  background-image: url(../images/news_header.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+/* パンくずリスト */
+.pannkuzulist {
+  display: flex;
+  align-items: center;
+  padding-block-start: var(--paddingS);
+  font-size: 14px;
+  color: var(--fontcolor);
+}
+
+.pannkuzulist li:nth-child(1)::after {
+  content: ">";
+  padding: 0 10px;
+  /* 余白、仮で設定してます */
+}
+.pannkuzulist li img {
+  height: 0.75rem;
+    vertical-align: middle;
+    padding-left: 0.5rem;
+    transform: translateY(-1.5px);
+}
+/* パンくずリスト終わり */
+
+
+
+/* --------------------下層共通コピペ終わり-------------------- */
+
+/* --------------------main開始-------------------- */
+
+/* 見出し */
+.title {
+  text-align: center;
+  padding-block-start: var(--paddingM);
+  display: flex;
+  flex-direction: column;
+  /* 余白、仮で設定してます */
+}
+/* お知らせ欄全体 */
+.newsarea {
+  display: flex;
+  gap: var(--gapL);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+
+/* 過去の投稿日時 */
+.archive {
+  background-color: #3da89a12;
+  min-width: 200px;
+  margin-inline: auto;
+  height: fit-content;
+  padding-block: var(--paddingS);
+  /* height: 500px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gapM);
+}
+
+.yearSection {
+  display: flex;
+  gap: var(--gapM);
+}
+
+.monthList {
+  text-align: end;
+}
+
+/* 記事一覧 */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.newsarea_article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gapL);
+}
+
+.newsarea_article h4 {
+  border-bottom: 1px solid var(--maincolor);
+  padding-top: var(--paddingM);
+}
+
+.newsarea_pic {
+  display: flex;
+  align-items: center;
+  gap: var(--gapM);
+}
+
+.newsarea_pic img {
+  width: 300px;
+  /* height: 200px; */
+  object-fit: cover;
+  aspect-ratio: 4/3;
+}
+
+/* ボタン */
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: var(--marginLL);
+}
+
+.page_btn {
+  padding: 10px 15px;
+  border: 1px solid var(--accentcolor);
+  color: var(--accentcolor);
+  background-color: #ffffff;
+  font-size: var(--fontsizeS);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page_btn:hover {
+  color: #ffffff;
+  background-color: var(--accentcolor);
+}
+/* ボタン終わり */
+
+/* 背景画像 */
+.logo_bg_butterfly {
+  background-image: url(../images/logo_bg_butterfly.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 1400px;
+  right: 0px;
+  z-index: -1;
+}
+.logo_circle {
+  background-image: url(../images/logo_circle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 1700px;
+  left: -200px;
+  z-index: -1;
+}
+
+/* --------------------main終了-------------------- */
+
+/* --------------------footer開始-------------------- */
+
+/* --------------------footer終了-------------------- */
+
+/* 〜〜〜〜〜〜〜〜〜〜メディアクエリ〜〜〜〜〜〜〜〜〜〜 */
+
+/* max-width950 */
+
+
+@media (max-width: 950px) {
+  header .header_inner {
+    padding-inline: 1rem;
+    gap: var(--gapLL);
+  }
+  header .header_inner .header_menu ul {
+    flex-wrap: wrap;
+    flex-basis: calc((100% / 6)- (2rem / 6));
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gapM);
+  }
+
+  .wrapper {
+    padding-inline: var(--paddingS);
+  }
+}
+
+/* max-width650px */
+
+@media (max-width: 650px) {
+  .newsarea_pic {
+    flex-direction: column;
+  }
+}
+
+
+/* max-width600px(モバイル) */
+
+@media (max-width: 600px) {
+  header .header_inner {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: -100vh;
+    transition: all 0.3s linear;
+  }
+
+  .header_pic {
+    height: 100vh;
+  }
+
+    /* お知らせ欄全体 */
+  .newsarea {
+    flex-direction: column;
+    padding-inline-start: 0;
+  }
+
+  /* 過去の投稿日時 */
+  .archive {
+    order: 2;
+  }
+
+  /* 記事一覧 */
+  .wrapper {
+    order: 1;
+    /* max-width: 300px; */
+  }
+
+  .newsarea_pic {
+    flex-direction: column;
+  }
+
+  .newsarea_pic img {
+    width: 100%;
+  }
+
+
+
+}
+
+

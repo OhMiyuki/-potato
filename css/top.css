@@ -1,0 +1,714 @@
+@import url(../css/style.css);
+
+
+/* sec01 */
+
+#top .sec01_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gapL);
+    border: 1px solid var(--maincolor);
+    border-radius: 10px;
+    padding: 80px 50px 50px 50px;
+    background-color: var(--basecolor);
+}
+
+#top .announce {
+    display: flex;
+    gap: var(--gapLL);
+    border-bottom: 1px solid var(--maincolor);
+    padding-block-end: 0.5rem;
+}
+
+#top .announce li{
+    text-indent: 1em;
+}
+
+.announce_button {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid var(--accentcolor);
+    padding-block: var(--gapM);
+    padding-inline: var(--gapM);
+    align-self: flex-end;
+}
+
+.announce_button:hover {
+    border-bottom: 2px solid #ffa389;
+    color: #ffa389;
+}
+
+
+/* sec03 */
+
+#top #sec03 {
+    background-color: var(--backgroundcolor);
+    position: relative;
+    padding-block: var(--paddingL);
+    text-align: center;
+}
+
+.bg_triangle{
+    position: relative;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 64%;
+    /* background: #5bc8ac; */
+}
+
+#sec03::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -90px;
+    left: 0;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    border-style: solid;
+    border-color: var(--backgroundcolor) transparent transparent transparent;
+    border-width: 90px 260px 0 260px;
+}
+
+
+
+#top #sec03 .wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#top #sec03 .sec03p {
+    font-size: var(--fontsizeLL);
+    line-height: 2;
+    letter-spacing: 1.5px;
+    padding-block-end: var(--paddingM);
+    text-align: left;
+    align-self: center;
+}
+
+#top .sec03_item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.caption {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gapL);
+    background-color: #fff;
+    padding-inline: 1rem;
+    padding-block: var(--paddingS);
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px #b3b3b3;
+}
+
+.sec03_title {
+    height: 35px;
+    font-weight: 700;
+    margin-block-end: 0.8rem;
+
+}
+
+.caption_image {
+    display: flex;
+    gap: 1rem;
+    height: 100px;
+    object-fit: contain;
+}
+
+.caption_text {
+    font-size: var(--fontsizeS);
+    height: 60px;
+    margin-block-end: 1rem;
+}
+
+/* sec04 */
+
+#top #sec04 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gapL);
+}
+
+#top #sec04 h4 {
+    padding-block-start: var(--paddingM);
+    padding-block-end: var(--paddingS);
+    font-size: var(--fontsizeLL);
+}
+
+#top #sec04 p {
+    text-align: center;
+}
+
+
+/* ボタンの上の文字とバックスラッシュ */
+
+#top .news_button{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-block-start: 2rem;
+}
+
+
+
+.banner00 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      gap: 10px; /* テキストと線の間隔 */
+}
+
+.backslash00 {
+    position: relative;
+      width: 30px; /* バックスラッシュの長さ */
+      height: 10px; /* 高さ（調整用） */
+}
+
+.backslash00::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px; /* 線の太さ */
+    background-color: var(--fontcolor); /* 線の色 */
+    transform: rotate(45deg); /* バックスラッシュの角度 */
+    top: 50%; /* 花道揃え */
+    left: 0;
+    transform-origin: center;
+}
+
+.forwardslash {
+    position: relative;
+      width: 30px; /* フォワードスラッシュの長さ */
+      height: 10px; /* 高さ（調整用） */
+}
+
+.forwardslash::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+      height: 1px; /* 線の太さ */
+      background-color: var(--fontcolor); /* 線の色 */
+      transform: rotate(-45deg); /* フォワードスラッシュの角度 */
+      top: 50%; /* 花道揃え */
+    left: 0;
+    transform-origin: center;
+}
+
+  /* お知らせボタン */
+
+#top #sec04 .button_pink{
+    margin-block-start: 0;
+}
+
+
+
+
+
+
+
+/* sec05 */
+
+#top .topics_link {
+    display: flex;
+    gap: var(--gapLL);
+    align-items: center;
+    padding-block-start: var(--paddingL);
+}
+
+#top #sec04 .topics_link .topics_link_title p{
+    /* width: 135px; */
+    align-self: flex-start;
+    text-align: left;
+    font-size: var(--fontsizeLL);
+    color: var(--maincolor);
+}
+
+#top .about_box{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--maincolor);
+    gap: 1rem;
+
+}
+
+#top .about_text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
+    align-self: flex-end;
+}
+
+#top .about_text .about_p p{
+    text-align: left;
+}
+
+.about_text img {
+    width: 40px;
+    object-fit: contain;
+}
+
+/* ボタン */
+
+.dli-caret-circle-fill-right-2 {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--accentcolor);
+    line-height: 1;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 0.075em solid currentColor;
+    background: currentColor;
+    border-radius: 50%;
+    box-sizing: content-box;
+    margin-inline-start: 10rem;
+}
+
+a:hover .dli-caret-circle-fill-right-2 {
+    color: #ffa389;
+}
+
+
+.dli-caret-circle-fill-right-2::before {
+    content: "";
+    color: var(--basecolor);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 7px 10px;
+    border-left-color: currentColor;
+    border-right: 0;
+    transform: translateX(15%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+
+
+
+
+/* sec06 */
+
+#top .sec06_wrapper{
+    display: flex
+    
+}
+
+#top .sec06_container {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#top .sec06_title {
+    text-align: center;
+    font-size: var(--fontsizeL);
+}
+
+#top .sec06_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gapLL);
+}
+
+#top .sec06_chairman {
+    font-size: var(--fontsizeS);
+    text-align: center;
+}
+
+#top .sec06_name {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--fontsizeL);
+    text-align: center;
+}
+
+#top .sec06_image {
+    height: 150px;
+    width: 200px;
+    background-image: url(../images/illust_president.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+#top .sec06_box{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* sec07 */
+
+.sec07_wrapper{
+    display: flex;
+    flex-direction: column;
+    padding-block-start: var(--paddingL);
+    padding-block-end: var(--paddingL);
+    background-color: var(--backgroundcolor);
+}
+
+#top .sec07_container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#top .sec07_item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gapM);
+}
+
+#top .sec07_image{
+    height: 150px;
+    width: 200px;
+    background-image: url(../images/history_header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+#top .sec07_image02{
+    height: 150px;
+    width: 200px;
+    background-image: url(../images/history_01book.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    
+}
+
+#top .sec07_image03{
+    height: 150px;
+    width: 200px;
+    background-image: url(../images/history_uzuyu.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+
+
+#top .sec07_decoration{
+    margin-block-end: var(--marginLL);
+    background-image: url();
+}
+
+#top .backslash{
+    text-align: center;
+    margin-block-start: var(--marginLL);
+    font-size: var(--fontsizeS);
+}
+
+/* ボタン */
+
+#top .sec07_button {
+    font-size: var(--fontsizeS);
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    background-color: var(--accentcolor);
+    color: var(--basecolor);
+    padding-inline: var(--gapL);
+    padding-block: 5px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 4px #b3b3b3;
+    margin-block-start: 10px;
+    margin-inline: auto;
+}
+
+#top .sec07_button:hover {
+    background-color: #ffa389;
+}
+
+
+
+#top .sec07arrow::before {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-top: 1px solid var(--basecolor);
+    border-right: 1px solid var(--basecolor);
+    
+}
+
+#top .sec07arrow::after{
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/icon_camera.png);
+    background-position: center;
+    background-size: contain;
+
+}
+
+#top .sec07arrow.-right::before {
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+
+.sec07_announce_button{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 2px solid var(--accentcolor);
+    margin-block-start: var(--marginLL);
+    padding-block: var(--gapM);
+    padding-inline: var(--gapM);
+    align-self: center;
+}
+
+.sec07_announce_button:hover{
+    border-bottom: 2px solid #ffa389;
+    color: #ffa389;
+}
+
+
+
+/* ワークショップバナー */
+
+#top .banner{
+    height: 200px;
+    background-image: url(../images/banner_workshop.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* sec08 */
+
+#top #sec08{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--gapM);
+}
+
+/* 背景画像 */
+
+.logo_circle {
+    background-image: url(../images/logo_circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 6500px;
+    left: -200px;
+    z-index: -1;
+}
+
+section{
+    padding-block-start: 90px;
+    padding-block-end: 120px;
+}
+
+#top #sec02{
+    margin-top: -100px;
+    padding-block-end: 60px;
+}
+
+
+/* *************メディアクエリ************* */
+@media (max-width: 850px) {
+    .dli-caret-circle-fill-right-2 {
+        margin-inline-start: 9rem;
+    }
+}
+
+
+
+/* max-width730px */
+
+@media (max-width: 730px) {
+    #top .announce {
+        flex-direction: column;
+        gap: var(--gapM);
+    }
+
+    #top .sec03_item {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .caption .sec03_title h4{
+        font-size: var(--fontsizeLL);
+    }
+
+    .caption_text {
+        font-size: var(--fontsizeM);
+        margin-block-end: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .triangle-right {
+        border-width: 25px 37px 0 37px;
+        border-color: var(--maincolor)transparent transparent transparent ;
+    }
+
+    #top .topics_link {
+        flex-direction: column;
+        gap: var(--gapLL);
+        align-items: center;
+        padding-block-start: var(--paddingL);
+    }
+
+    #top #sec04 .topics_link .topics_link_title p {
+        text-align: center;
+    }
+
+    #top #sec04 .topics_link .topics_link_title .kaigyou{
+        display: inline;
+    }
+
+
+    .dli-caret-circle-fill-right-2 {
+        margin-inline-start: 9rem;
+    }
+
+    #sec03::after{
+        border-color: var(--backgroundcolor) transparent transparent transparent;
+        border-width: 90px 260px 0 260px;
+    }
+    
+
+    .sec07_wrapper {
+        padding-block-start: var(--paddingM);
+        padding-block-end: var(--paddingM);
+    }
+
+
+    #top .sec07_container{
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+
+#top #sec01 {
+    padding-block-start: 0px;
+}
+
+#top .announce li{
+    text-indent: 0px;
+}
+
+.caption {
+    width: 300px;
+}
+    #sec03::after{
+        bottom: -60px;
+        border-width: 60px 120px 0 120px;
+    }
+
+
+
+
+}
+
+
+/* max-width450px */
+
+@media (max-width: 450px) {
+    
+
+    #top #sec03 .sec03p {
+        font-size: var(--fontsizeL);
+        line-height: 2;
+        letter-spacing: 1.5px;
+        padding-block-end: var(--paddingM);
+        text-align: left;
+        align-self: center;
+    }
+
+    
+    #top #sec04 h4 {
+        text-align: center;
+    }
+
+    #top .sec06_wrapper {
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+
+    .kaigyou{
+        display: inline;
+    }
+
+    .top #sec04 p {
+        text-align: left;
+    }
+
+    .dli-caret-circle-fill-right-2 {
+        margin-inline-start: 3rem;
+    }
+
+    .about_p{
+        width: 184px;
+    }
+
+    .about_box{
+        justify-content: space-between;
+    }
+    
+
+    #top .sec06_item {
+        gap: var(--gapL);
+    }
+
+    #top .sec06_title {
+        text-align: center;
+        font-size: var(--fontsizeLL);
+    }
+
+    #top .sec06_name {
+        font-size: var(--fontsizeLL);
+    }
+
+    #top .sec06_chairman {
+        font-size: var(--fontsizeM);
+    }
+
+    #top .sec06_box {
+        gap: 0;
+    }
+
+    #top .sec06_container .button_pink {
+        margin-block-start: 1rem;
+    }
+}

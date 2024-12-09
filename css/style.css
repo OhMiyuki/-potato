@@ -1,0 +1,777 @@
+/* ************************** 変数 ***************************/
+
+:root {
+    /* フォント */
+    --fontsizeS: 14px;
+    --fontsizeM: 16px;
+    --fontsizeL: 18px;
+    --fontsizeLL: 24px;
+    --fontsizeXL: 32px;
+    --fontseize2XL: 48px;
+
+    /* 行間 */
+    --lineheightM: 1.5;
+    --lineheigthL: 2;
+
+    /* 文字間 */
+    --letterspacingM: 0.1rem;
+
+    /* カラー */
+    --maincolor: #3da89a;
+    --accentcolor: #ffbaa7;
+    --basecolor: #fffef7;
+    --subcolor: #f9fdff;
+    --fontcolor: #353434;
+    --backgroundcolor: #e5f7f7;
+
+    /* パディング */
+    --paddingS: 30px;
+    --paddingM: 50px;
+    --paddingL: 100px;
+    --paddingLL: 200px;
+
+    /* マージン */
+    --marginM: 32px;
+    --marginL: 48px;
+    --marginLL: 64px;
+
+    /* gap */
+    --gapM: 16px;
+    --gapL: 32px;
+    --gapLL: 48px;
+    --gapXL: 110px;
+}
+
+/* ************************** サイト共通 ************************** */
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1{
+    width: 280px;
+}
+
+h2 {
+    font-size: var(--fontsizeXL);
+    color: var(--maincolor);
+    text-align: center;
+    padding-block: var(--paddingS);
+    letter-spacing: 2px;
+}
+
+/* h2 メディアクエリ */
+@media (max-width: 600px) {
+
+    h2 {
+        font-size: var(--fontsizeLL);
+        padding-block-start: 0px;
+        padding-block-end: 2rem;
+    }
+}
+
+
+
+
+h3 {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 40px 50px 0;
+    font-size: var(--fontsizeLL);
+    color: var(--fontcolor);
+    text-align: center;
+    background-image: url(../images/logo_waves.svg);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: right center;
+    padding-block: var(--paddingL);
+}
+    
+/* h3 メディアクエリ */
+@media (max-width: 600px) {
+
+    h3 {
+        font-size: var(--fontsizeL);
+        padding-block: var(--paddingM);
+
+    }
+}
+
+
+
+
+h4 {
+    font-size: var(--fontsizeL);
+    color: var(--maincolor);
+}
+
+/* ****一文字目大きいやつ**** */
+.first_letterM::first-letter {
+    font-size: var(--fontsizeLL);
+}
+
+.first_letterL::first-letter {
+    font-size: var(--fontsizeXL);
+}
+
+/* ****ボタンデザイン**** */
+
+/* ピンクのボタン */
+
+.button_pink {
+    font-size: var(--fontsizeS);
+    display: flex;
+    gap: 1rem;
+    width: fit-content;
+    background-color: var(--accentcolor);
+    color: var(--basecolor);
+    padding-inline: var(--gapL);
+    padding-block: 5px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 4px #b3b3b3;
+    margin-block-start: var(--marginL);
+    margin-inline: auto;
+    font-weight: 700;
+}
+
+.button_pink:hover {
+    background-color: #ffa389;
+}
+
+
+.arrow::before {
+    content: "";
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-top: 2px solid var(--basecolor);
+    border-right: 2px solid var(--basecolor);
+}
+
+.arrow.-right::before {
+    transform: rotate(45deg);
+    display: inline-block;
+}
+
+
+/* 丸のボタン */
+
+.dli-caret-circle-fill-right {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--accentcolor);
+    line-height: 1;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 0.075em solid currentColor;
+    background: currentColor;
+    border-radius: 50%;
+    box-sizing: content-box;
+}
+
+a:hover .dli-caret-circle-fill-right {
+    color: #ffa389;
+}
+
+
+.dli-caret-circle-fill-right::before {
+    content: "";
+    color: var(--basecolor);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 7px 10px;
+    border-left-color: currentColor;
+    border-right: 0;
+    transform: translateX(15%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ****矢印**** */
+
+.triangle-right {
+    display: inline-block;
+    margin-inline-end: 0.5rem;
+    border-style: solid;
+    border-width: 28px 0 28px 20px;
+    border-color: transparent transparent transparent var(--maincolor);
+}
+
+/* ****改行**** */
+.kaigyou {
+    display: block;
+}
+
+/* ****文章の改行＆1行空ける(span)**** */
+.kaigyou_kuuhaku {
+    display: block;
+    padding-block-end: 0.8rem;
+}
+
+/* ******途中に入るロゴ****** */
+.logo {
+    height: 220px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.4;
+    /* margin-block: var(--marginL); */
+}
+
+/* ****max-width**** */
+.wrapper {
+    max-width: 768px;
+    margin-inline: auto;
+    margin-block-end: var(--marginLL);
+}
+
+/* ************************** フォント ************************** */
+
+body {
+    font-family: "Noto Serif JP", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--fontcolor);
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    font-size: var(--fontsizeM);
+}
+
+/* **************************　top header ************************** */
+
+#top .header_container {
+    background-image: url(../images/top_header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top ;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: var(--paddingM);
+    padding-inline: var(--paddingL);
+    position: relative;
+    z-index: -2;
+}
+
+#top .header_container::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(2, 0, 36, 0) 40%,
+        rgba(255, 254, 254, 0.965) 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#top header .header_logo {
+    max-width: 180px;
+}
+
+#top header .catchcopy {
+    font-size: 48px;
+    color: #575757;
+}
+
+#top .header_nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+
+#top .header_nav ul li:hover{
+    color: var(--accentcolor);
+}
+
+/* -------- header メディアクエリ --------- */
+
+
+@media (max-width: 900px) {
+
+#top header .header_logo {
+        max-width: 150px;
+    }
+    #top .header_container {
+        padding-inline: var(--paddingS);
+    }
+}
+
+
+@media (max-width: 600px) {
+#top .header_container {
+    /* flex-direction: column; */
+    padding-inline: var(--paddingS);  
+}
+
+#top header .header_logo {
+    max-width: 0;
+}
+
+#top header .catchcopy {
+    padding-bottom: var(--paddingM);
+}
+
+}
+
+/* ***********************モバイルヘッダー*********************** */
+
+/* ドロワーボタン */
+
+#drawerButton{
+    display:none;
+}
+
+#mobile_nav{
+    display: none;
+}
+
+
+/* メディアクエリ */
+
+@media (max-width: 600px) {
+    header .header_inner {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: -100vh;
+        transition: all 0.3s linear;
+    }
+    .header_pic {
+        height: 100vh;
+    }
+
+#mobile_nav {
+    width: 100%;
+    height: 84px;
+    position: fixed;
+    bottom: 0;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-inline: 3px;
+    z-index: 1;
+}
+
+.mobile_logo {
+    /* width: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo_mobile {
+    width: 50px;
+    height: 50px;
+}
+
+.logo_text img{
+    width: 80px;
+    height: 100px;
+    text-align: center;
+}
+
+  /* ワークショップ誘導 */
+.mobile_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gapM);
+    font-size: var(--fontsizeS);
+    text-align: center;
+    border-inline: 1px solid #ededed;
+    flex-basis: calc(100%-150px);
+    height: 70px;
+    width: 200px;
+}
+
+.mobile_text p {
+    line-height: 1.5;
+}
+
+.mobile_text .mobile_button{
+    font-family: ' Noto Sans JP ';
+}
+
+.mobile_button {
+    font-size: var(--fontsizeS);
+    background-color: var(--accentcolor);
+    color: var(--basecolor);
+    padding: 5px 4px 5px 7px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 4px #b3b3b3;
+    /* font-weight: 700; */
+}
+
+
+  /* ドロワーボタン */
+#drawerButton {
+    width: 50px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+  /* オープン */
+
+.hamburger {
+    position: relative;
+    width: 32px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    position: absolute;
+    background-color: var(--accentcolor);
+    border-radius: 1px;
+    transition: all 0.3s linear;
+}
+
+.hamburger span:nth-child(1) {
+    top: 13px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 21px;
+}
+
+.hamburger span:nth-child(3) {
+    bottom: -2px;
+}
+
+#drawerButton p {
+    font-size: var(--fontsizeS);
+    color: var(--accentcolor);
+}
+
+  /* クローズ */
+
+#drawerButton.close span:nth-child(1){
+    transform: rotate(-45deg);
+    top: 18px;
+}
+
+#drawerButton.close span:nth-child(2){
+    transform: scale(0);
+}
+
+#drawerButton.close span:nth-child(3){
+    transform: rotate(45deg);
+    bottom: 10px;
+}
+
+
+  /* 見えないメニュー */
+
+.mobile_nav{
+display: block;
+position: fixed;
+height: 100%;
+width: 100%;
+top: -100vh;
+transition: all 0.3s linear;
+}
+
+#menu{
+background-color: var(--maincolor);
+height: calc(100vh - 70px);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+color: var(--basecolor);
+}
+
+#menu .menu_logo img{
+width: 120px;
+aspect-ratio: 1/1;
+}
+
+#menu .menu_boder{
+border-bottom: 1px solid var(--basecolor);
+padding: 0px 29%;
+}
+
+#menu li a{
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1rem;
+}
+
+
+#menu li img{
+width: 21px;
+aspect-ratio: 1/1;
+text-align: center;
+}
+
+.mobile_nav.open{
+top: 0;
+height: calc(100vh - 70px);
+}
+
+}
+
+
+
+
+
+
+
+
+/* ************************** footer ************************** */
+footer {
+    background-image: url(../images/footer_image_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    padding-inline: 60px;
+    padding-top: 500px;
+    color: white;
+}
+
+footer .footer_nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer_img img{
+    width: 300px;
+}
+
+footer .footer_nav img {
+    max-width: 160px;
+    margin-top: 3rem;
+}
+
+footer .footer_nav .footer_text {
+    display: flex;
+    flex-basis: 400px;
+    align-items: flex-start;
+}
+
+footer .footer_nav .footer_text nav {
+    flex-basis: 400px;
+    border-left: 1px solid white;
+    padding-left: 1rem;
+}
+
+footer .footer_nav .footer_text nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: var(--fontsizeM);
+}
+
+footer .footer_nav .footer_text nav ul li:hover{
+    color: var(--accentcolor);
+}
+
+
+footer p {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+footer .sanka{
+    background-color: white;
+    border-radius: 5px;
+    color: var(--maincolor);
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    width: 155px;
+}
+
+
+.sanka-dli-caret-circle-fill-right {
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--maincolor);
+    line-height: 1;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 0.075em solid currentColor;
+    background: currentColor;
+    border-radius: 50%;
+    box-sizing: content-box;
+    margin-inline-start: 0.5rem;
+}
+
+li:hover .sanka-dli-caret-circle-fill-right  {
+    color: var(--accentcolor);
+}
+
+
+.sanka-dli-caret-circle-fill-right::before {
+    content: "";
+    color: var(--basecolor);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 7px 10px;
+    border-left-color: currentColor;
+    border-right: 0;
+    transform: translateX(15%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* ************************** メディアクエリ ************************** */
+
+/* max-width1050px */
+@media (max-width: 1050px) {
+    .wrapper {
+        padding-inline: var(--paddingS);
+    }
+}
+
+/* max-width600px */
+
+@media (max-width: 600px) {
+    .header_nav{
+        display: none;
+    }
+}
+
+
+/* max-width700px */
+
+@media (max-width: 700px) {
+    footer {
+        background-image: url(../images/mobile_footer.png);
+        padding-top: 200px;
+    }
+
+    footer .footer_nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    footer .footer_nav img {
+        max-width: 100px;
+    }
+
+    footer .footer_nav .footer_text {
+        display: block;
+        align-items: center;
+    }
+
+    footer .footer_nav .footer_text nav {
+        flex-basis: 400px;
+        border-left: none;
+    }
+
+    footer .sanka{
+        margin-inline: auto;
+        margin-top: 1rem;
+    }
+
+}
+
+/* ************************** トップに戻るボタン ************************** */
+
+.topButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 120px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 1rem; /* 右から1rem */
+    bottom: 1rem; /* 下から1rem */
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.topbutton_arrow {
+    background-color: var(--accentcolor);
+    border-radius: 50%;
+    box-shadow: 1px 4px 4px #b2b2b2;
+    width: 72px;
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_arrow{
+    height: 35px;
+    width: 35px;
+    background-image: url(../images/butoon_arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.topButton p {
+    font-weight: 700;
+    color: var(--accentcolor);
+    font-size: var(--fontsizeL);
+    font-family: 'Noto Sans Japanese';
+    letter-spacing: 0.1rem;
+    text-shadow: 0.5px 3px 3px #b2b2b2;
+}
+
+/* Jsで後から付与するクラス.active */
+.topButton.active {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+
+    .topButton {
+        display: none;
+    }
+    
+}
+
+

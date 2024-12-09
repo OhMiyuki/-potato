@@ -1,0 +1,268 @@
+@import url(../css/style.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: "Noto Serif JP", serif;
+}
+
+#question h2{
+    margin-block-end: 2rem;
+}
+
+/* -------------------- 下層共通コピペここから-------------------- */
+header .header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-inline: 50px;
+    height: 100px;
+}
+
+header .header_inner .header_logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header .header_inner .header_menu ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+header .header_inner .header_menu ul a:hover {
+    color: var(--accentcolor);
+}
+
+header .header_inner .header_menu ul a:nth-child(6) {
+    color: #ffbaa7;
+}
+
+.header_pic {
+    height: 500px;
+    background-image: url(../images/question_header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* パンくずリスト */
+.pannkuzulist {
+    display: flex;
+    align-items: center;
+    padding-block-start: var(--paddingS);
+    font-size: 14px;
+    color: var(--fontcolor);
+}
+
+.pannkuzulist li:nth-child(1)::after {
+    content: ">";
+    padding: 0 10px;
+    /* 余白、仮で設定してます */
+}
+.pannkuzulist li img {
+    height: 0.75rem;
+    vertical-align: middle;
+    padding-left: 0.5rem;
+    transform: translateY(-1.5px);
+}
+/* パンくずリスト終わり */
+
+.title {
+    text-align: center;
+    padding-block-start: var(--paddingM);
+    display: flex;
+    flex-direction: column;
+    /* 余白、仮で設定してます */
+}
+/* メディアクエリ共通コピペ */
+
+@media (max-width: 950px) {
+    header .header_inner {
+        padding-inline: 1rem;
+        gap: var(--gapLL);
+    }
+
+    header .header_inner .header_menu ul {
+        flex-wrap: wrap;
+    }
+
+    .newsarea {
+        padding-inline-start: var(--paddingS);
+    }
+
+    header .header_inner .header_menu ul {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gapM);
+    }
+}
+
+/* モバイルのときのファーストビュー調整 */
+
+@media (max-width: 600px) {
+    .header_pic {
+        height: 100vh;
+    }
+}
+
+/* メディアクエリ共通コピペ */
+
+/* --------------------下層共通コピペ終わり-------------------- */
+
+.wrapper {
+    font-family: "Noto Serif JP", serif;
+    color: #333;
+    letter-spacing: var(--letterspacingM);
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    font-family: "Klee One", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #e5f7f7;
+    padding: 50px 50px 50px 50px;
+    border-radius: 10px;
+}
+
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 20px 30px 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    font-size: var(--fontsizeL);
+    gap: 5px;
+}
+
+.q {
+    color: var(--maincolor);
+    margin-right: 20px;
+    font-size: var(--fontsizeXL);
+}
+
+.toggle-btn {
+    margin-left: auto;
+    width: 40px; /* 幅と高さを調整 */
+    height: 40px;
+    background-color: var(--accentcolor);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; /* 少し丸みをつける */
+    
+}
+
+.toggle-btn:focus {
+    outline: none;
+}
+
+.answer {
+    display: none;
+    margin-top: 10px;
+    font-size: var(--fontsizeM);
+    color: #555;
+}
+.answer p {
+    font-size: var(--fontsizeM);
+    color: var(--maincolor);
+    margin-bottom: 10px; /* 各段落間にスペース */
+}
+
+.faq-item.open .answer {
+    display: block;
+}
+
+.faq-item.open .toggle-btn {
+    content: "-";
+}
+
+/* 背景画像 */
+
+#question .logo_circle {
+    background-image: url(../images/logo_circle.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 1700px;
+    left: -200px;
+    z-index: -1;
+}
+
+
+/*
+    ------------------メディアクエリ---------------------
+    */
+@media (max-width: 500px) {
+    .wrapper {
+        padding: 10px; /* パディングを縮小 */
+        font-size: 14px; /* フォントサイズを小さく */
+        letter-spacing: normal; /* 文字間隔をデフォルトに */
+        line-height: 1.4; /* 行間を少し詰める */
+    }
+
+    .faq-container {
+        padding: 20px; /* パディングを減らす */
+        max-width: 100%; /* 幅を100%にして余白をなくす */
+
+    }
+
+    .faq-item {
+        padding: 15px 20px; /* パディングを縮小 */
+    }
+
+    .question p {
+        width: calc(100% - 20px - 30px);
+        font-size: 12px; /* フォントサイズを小さく */
+    }
+
+    .q {
+        width: 20px;
+        font-size: 16px; /* 質問の文字を少し小さく */
+        margin-right: 20px; /* 右のマージンを減らす */
+    }
+
+    .toggle-btn {
+        width: 30px; /* ボタンの幅を小さく */
+        height: 30px; /* ボタンの高さを小さく */
+        font-size: 18px; /* アイコンの文字を小さく */
+        border-radius: 50%; /* 丸くする */
+        display: flex;
+        justify-content: center; /* アイコンを花道に */
+        align-items: center; /* アイコンを縦横花道に */
+        margin-left: auto; /* 自動で右端に寄せる */
+    }
+    .toggle-btn:focus {
+        outline: none;
+    }
+
+    .answer {
+        font-size: 10px; /* 答えのフォントサイズを小さく */
+    }
+
+    .answer p {
+        font-size: 14px; /* 段落のフォントサイズも小さく */
+    }
+}

@@ -1,0 +1,266 @@
+@import url(../css/style.css);
+
+.phone {
+    text-align: center;
+    margin-top: 80px;
+}
+
+/* 基本的なリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------- 下層共通コピペここから-------------------- */
+header .header_inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-inline: 50px;
+    height: 100px;
+}
+
+header .header_inner .header_logo {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+header .header_inner .header_menu ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+
+header .header_inner .header_menu ul a:hover {
+    color: var(--accentcolor);
+}
+
+header .header_inner .header_menu ul a:nth-child(6) {
+    color: #ffbaa7;
+}
+
+.header_pic {
+    height: 500px;
+    background-image: url(../images/contact_header.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+}
+
+/* パンくずリスト */
+.pannkuzulist {
+    display: flex;
+    align-items: center;
+    padding-block-start: var(--paddingS);
+    font-size: 14px;
+    color: var(--fontcolor);
+}
+
+.pannkuzulist li:nth-child(1)::after {
+    content: ">";
+    padding: 0 10px;
+    /* 余白、仮で設定してます */
+}
+.pannkuzulist li img {
+    height: 0.75rem;
+    vertical-align: middle;
+    padding-left: 0.5rem;
+    transform: translateY(-1.5px);
+}
+/* パンくずリスト終わり */
+
+.title {
+    text-align: center;
+    padding-block-start: var(--paddingM);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gapM);
+    /* 余白、仮で設定してます */
+}
+
+/* メディアクエリ共通コピペ */
+
+@media (max-width: 950px) {
+    header .header_inner {
+        padding-inline: 1rem;
+        gap: var(--gapLL);
+    }
+
+    header .header_inner .header_menu ul {
+        flex-wrap: wrap;
+    }
+
+    .newsarea {
+        padding-inline-start: var(--paddingS);
+    }
+
+    header .header_inner .header_menu ul {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--gapM);
+    }
+}
+
+/* モバイルのときのファーストビュー調整 */
+
+@media (max-width: 600px) {
+    .header_pic {
+        height: 100vh;
+    }
+}
+
+/* メディアクエリ共通コピペ */
+
+/* --------------------下層共通コピペ終わり-------------------- */
+
+/* 背景色、フォント、余白の設定 */
+
+h1 {
+    font-size: var(--fontsizeLL);
+    color: var(--maincolor);
+    text-align: center;
+}
+
+h3 {
+    font-size: var(--fontsizeLL);
+    color: var(--maincolor);
+    text-align: center;
+    margin-top: 50px;
+}
+
+.notes {
+    /* margin-top: 200px;
+    margin-bottom: 100px; */
+    max-width: 768px;
+    margin: 50px auto 100px auto;
+    line-height: var(--lineheightM);
+}
+.dottext .dot {
+    min-width: 10px;
+}
+.dot img {
+    width: 10px;
+    height: 10px;
+    vertical-align: baseline;
+}
+
+.dottext {
+    display: flex;
+    gap: 20px;
+}
+
+body {
+    font-family: "Klee One", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: white;
+    color: var(--fontcolor); /* 基本的な文字色 */
+    /* margin: 20px; */
+}
+
+/* フォーム全体のスタイル */
+form {
+    background-color: var(--subcolor);
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 300px;
+}
+
+/* フォーム項目のグループ */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* ラベルのスタイル */
+.form-group label {
+    display: block;
+    font-size: var(--fontsizeL);
+    color: var(--fontcolor);
+    margin-bottom: 5px;
+}
+
+/* 必須マークのスタイル */
+.required {
+    color: white;
+    background-color: var(--accentcolor);
+    font-size: var(--fontsizeS);
+    width: 200px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+}
+
+/* 入力フィールドのスタイル */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: var(--fontsizeS);
+    border: 0.5px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+/* テキストエリアのスタイル */
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* フォームの送信ボタン */
+#contact .wrapper button {
+    background-color: var(--accentcolor); /* ボタンの塗り */
+    color: white; /* ボタンの文字色 */
+    padding: 12px 20px;
+    font-size: var(--fontsizeM);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* width: 100%; */
+    width: 180px;
+    text-align: center;
+    margin: 20px auto 0;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ボタンのホバー時のスタイル */
+#contact .wrapper button:hover {
+    background-color: var(--accentcolor);
+}
+
+/* フォーム項目間の余白調整 */
+.form-group + .form-group {
+    margin-top: 20px;
+}
+
+/* 入力が無いときに表示するエラーメッセージのスタイル */
+#contact input:invalid,
+textarea:invalid {
+    border-color: var(--fontcolor);
+}
+
+/* 入力が正しい場合のスタイル */
+#contact input:valid,
+textarea:valid {
+    border-color: green;
+}
+
+/*
+    ------------------メディアクエリ---------------------
+    */
+
+@media (max-width: 680px) {
+    .dottext br {
+        display: none;
+    }
+}
